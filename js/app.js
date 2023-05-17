@@ -6,6 +6,7 @@ createApp({
       title: "Test Api",
       randomMail: "https://flynn.boolean.careers/exercises/api/random/mail",
       mails: [],
+      prova: 1,
     };
   },
   methods: {
@@ -14,6 +15,12 @@ createApp({
         this.mails.push(mails.data.response);
       });
     },
+
+    deleteEmail(i) {
+      this.mails.splice(i, 1);
+      console.log(this.prova);
+    },
+
     removeLastEmail() {
       this.mails.pop();
     },
