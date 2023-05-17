@@ -16,7 +16,9 @@
         <ul v-if="mails.length >= 10">
             <li v-for="mail in mails">{{mail}}</li>
         </ul>
-        <button @click="addEmail">CLICCAMI</button>
+        <button @click="addEmail">Add New Email</button>
+        <button @click="removeLastEmail">remove last Email</button>
+
     </div>
 
 

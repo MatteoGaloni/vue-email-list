@@ -14,7 +14,11 @@ createApp({
         this.mails.push(mails.data.response);
       });
     },
+    removeLastEmail() {
+      this.mails.pop();
+    },
   },
+
   mounted() {
     for (let index = 0; index < 10; index++) {
       axios.get(this.randomMail).then((mails) => {
