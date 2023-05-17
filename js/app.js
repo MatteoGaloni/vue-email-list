@@ -8,7 +8,13 @@ createApp({
       mails: [],
     };
   },
-  methods: {},
+  methods: {
+    addEmail() {
+      axios.get(this.randomMail).then((mails) => {
+        this.mails.push(mails.data.response);
+      });
+    },
+  },
   mounted() {
     for (let index = 0; index < 10; index++) {
       axios.get(this.randomMail).then((mails) => {

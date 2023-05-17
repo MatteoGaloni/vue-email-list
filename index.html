@@ -13,9 +13,10 @@
 <body>
     <div id="app">
         <h1>vue-email-list</h1>
-        <ul v-if="mails.length == 10">
+        <ul v-if="mails.length >= 10">
             <li v-for="mail in mails">{{mail}}</li>
         </ul>
+        <button @click="addEmail">CLICCAMI</button>
     </div>
 
 
