@@ -6,7 +6,7 @@ createApp({
       title: "Test Api",
       randomMail: "https://flynn.boolean.careers/exercises/api/random/mail",
       mails: [],
-      prova: 1,
+      myEmail: "",
     };
   },
   methods: {
@@ -14,6 +14,10 @@ createApp({
       axios.get(this.randomMail).then((mails) => {
         this.mails.push(mails.data.response);
       });
+    },
+
+    addPersonalEmail() {
+      this.mails.push(this.myEmail);
     },
 
     deleteEmail(i) {
@@ -27,7 +31,7 @@ createApp({
   },
 
   mounted() {
-    for (let index = 0; index < 10; index++) {
+    for (let index = 0; index < 5; index++) {
       axios.get(this.randomMail).then((mails) => {
         this.mails.push(mails.data.response);
       });

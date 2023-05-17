@@ -16,7 +16,12 @@
     <div id="app">
         <div class="container text-center w-50 p-3">
             <h1>Vue-Email-List</h1>
-            <ul v-if="mails.length >= 10" class="list-group mb-2">
+
+            <input class="form-control" type="text" placeholder="insert your personal email" v-model="myEmail"
+                @keyUp.enter="addPersonalEmail">
+            <button class="btn btn-danger m-2" @click="addPersonalEmail">Add Email</button>
+
+            <ul v-if="mails.length >= 5" class="list-group mb-2">
                 <li v-for="(mail, i) in mails" class="list-group-item d-flex justify-content-between text-danger">
                     {{mail}}
                     <button class="btn btn-warning" @click="deleteEmail(i)">Remove This
